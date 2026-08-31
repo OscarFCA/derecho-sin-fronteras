@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Derecho Sin Fronteras — Puentes académicos entre México y Europa</title>
+<meta name="description" content="Iniciativa estudiantil de la Facultad de Derecho de la UNAM que construye puentes académicos entre México, España, Francia y Portugal para futuras generaciones de estudiantes de Derecho.">
+<link rel="canonical" href="https://oscarfca.github.io/derecho-sin-fronteras/">
+<link rel="icon" type="image/webp" href="assets/dsf-logo.webp">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Derecho Sin Fronteras">
+<meta property="og:title" content="Derecho Sin Fronteras — Puentes académicos entre México y Europa">
+<meta property="og:description" content="Conocimiento sin fronteras, justicia sin límites. Convenios académicos entre la UNAM e instituciones de España, Francia y Portugal.">
+<meta property="og:url" content="https://oscarfca.github.io/derecho-sin-fronteras/">
+<meta property="og:image" content="https://oscarfca.github.io/derecho-sin-fronteras/assets/dsf-logo.webp">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap">
+<script src="./image-slot.js"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #F7F4EC; color: #0B2E6B; font-family: Montserrat, sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #0B2E6B; text-decoration: none; }
+  a:hover { color: #C7A13A; }
+  :focus-visible { outline: 2px solid #C7A13A; outline-offset: 3px; }
+  ::selection { background: #C7A13A; color: #F7F4EC; }
+  input::placeholder { color: #6A7EA5; }
+  section[id] { scroll-margin-top: 200px; }
+  @media (min-width: 720px) { section[id] { scroll-margin-top: 92px; } }
+</style>
+</helmet>
+
+<div style="max-width:100%;overflow-x:hidden">
+
+<header style="position:sticky;top:0;z-index:50;background:rgba(247,244,236,0.94);backdrop-filter:blur(8px);border-bottom:1px solid #C7A13A">
+  <div style="max-width:1180px;margin:0 auto;padding:14px clamp(20px,4vw,40px);min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:clamp(14px,3vw,32px);flex-wrap:wrap;row-gap:14px">
+    <a href="#inicio" style="display:flex;align-items:center;gap:14px;flex-shrink:0">
+      <img src="assets/dsf-logo.webp" alt="Derecho Sin Fronteras" style="width:44px;height:44px;object-fit:cover;object-position:50% 22%;mix-blend-mode:multiply">
+      <span style="font-family:Cinzel,serif;font-weight:600;font-size:15px;letter-spacing:0.16em;line-height:1.25;text-transform:uppercase;color:#0B2E6B">Derecho<br>Sin Fronteras</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:clamp(16px,2.4vw,34px);flex-wrap:wrap;justify-content:flex-end">
+      <a href="#sobre" style="font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#4A4F5A">Sobre la iniciativa</a>
+      <a href="#compromiso" style="font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#4A4F5A">Compromiso</a>
+      <a href="#paises" style="font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#4A4F5A">Países aliados</a>
+      <a href="#cronograma" style="font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#4A4F5A">Cronograma</a>
+      <a href="#apoya" style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#F7F4EC;background:#0B2E6B;padding:13px 22px" style-hover="background:#C7A13A;color:#0B2E6B">Apoya</a>
+    </nav>
+  </div>
+</header>
+
+<section id="inicio" style="max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,96px) clamp(24px,5vw,40px) clamp(56px,7vw,88px);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(40px,6vw,72px);align-items:center">
+  <div>
+    <p style="margin:0 0 28px;font-size:11px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:#C7A13A">México · España · Francia · Portugal</p>
+    <h1 style="margin:0;font-family:Cinzel,serif;font-weight:600;font-size:clamp(38px,7vw,66px);line-height:1.06;letter-spacing:0.04em;text-transform:uppercase;color:#0B2E6B;text-wrap:balance">Derecho<br>Sin Fronteras</h1>
+    <div style="width:96px;height:1px;background:#C7A13A;margin:34px 0"></div>
+    <p style="margin:0;max-width:520px;font-size:18px;font-weight:300;line-height:1.75;color:#4A4F5A;text-wrap:pretty">Construimos puentes académicos entre México, España, Francia y Portugal para formar líderes con visión global y compromiso con la justicia.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:44px">
+      <a href="#sobre" style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#F7F4EC;background:#0B2E6B;padding:18px 30px" style-hover="background:#C7A13A;color:#0B2E6B">Conoce la iniciativa</a>
+      <a href="#apoya" style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#0B2E6B;border:1px solid #C7A13A;padding:18px 30px" style-hover="background:#C7A13A">Apoya la campaña</a>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:center">
+    <img src="assets/dsf-logo.webp" alt="Emblema Derecho Sin Fronteras: balanza sobre globo terráqueo y libro abierto" style="width:100%;max-width:400px;mix-blend-mode:multiply">
+  </div>
+</section>
+
+<sc-if value="{{ mostrarFotografia }}" hint-placeholder-val="{{ true }}">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(24px,5vw,40px) clamp(56px,7vw,96px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:#C7A13A;border:1px solid #C7A13A">
+      <img onClick="{{ abrirFoto }}" title="Ampliar" data-pie="Jorge Carbajal frente a un mural universitario, Ciudad Universitaria." src="assets/jc-mural.webp" alt="Jorge Carbajal frente a un mural universitario en Ciudad Universitaria" style="display:block;width:100%;height:clamp(320px,44vw,520px);object-fit:cover;object-position:50% 30%;cursor:zoom-in">
+      <img onClick="{{ abrirFoto }}" title="Ampliar" data-pie="Firma de documentos con el equipo de la iniciativa." src="assets/jc-libro.webp" alt="Jorge Carbajal firmando un documento con un estudiante" style="display:block;width:100%;height:clamp(320px,44vw,520px);object-fit:cover;cursor:zoom-in">
+    </div>
+    <p style="margin:16px 0 0;font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#6A7EA5">Ciudad Universitaria · Jorge Carbajal</p>
+  </div>
+</sc-if>
+
+<section id="sobre" style="border-top:1px solid #C7A13A;background:#0B2E6B;color:#F7F4EC">
+  <div style="max-width:1180px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(24px,5vw,40px)">
+    <p style="margin:0 0 20px;font-size:11px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:#C7A13A">Sobre la iniciativa</p>
+    <h2 style="margin:0;max-width:900px;font-family:Cinzel,serif;font-weight:500;font-size:clamp(28px,4.4vw,44px);line-height:1.22;letter-spacing:0.03em;color:#F7F4EC;text-wrap:balance">Conocimiento sin fronteras, justicia sin límites</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(40px,6vw,72px);margin-top:56px;align-items:start">
+      <div>
+        <p style="margin:0;font-size:17px;font-weight:300;line-height:1.8;color:#D8DDE8;text-wrap:pretty">Derecho Sin Fronteras es una iniciativa estudiantil que construye puentes académicos entre México, España, Francia y Portugal, convirtiendo relaciones académicas internacionales en oportunidades accesibles para futuras generaciones de estudiantes de Derecho.</p>
+        <p style="margin:28px 0 0;font-size:17px;font-weight:300;line-height:1.8;color:#D8DDE8;text-wrap:pretty">La marca no comunica un viaje: comunica la construcción de una infraestructura académica internacional que permanece después de quienes la iniciaron.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:#6A7EA5;margin-top:48px">
+          <sc-for list="{{ atributos }}" as="attr" hint-placeholder-count="4">
+            <div style="background:#0B2E6B;padding:26px 24px">
+              <p style="margin:0 0 10px;font-family:Cinzel,serif;font-weight:600;font-size:15px;letter-spacing:0.14em;text-transform:uppercase;color:#C7A13A">{{ attr.nombre }}</p>
+              <p style="margin:0;font-size:14px;font-weight:300;line-height:1.6;color:#D8DDE8">{{ attr.texto }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="border:1px solid #C7A13A;padding:clamp(28px,4vw,40px) clamp(24px,4vw,36px)">
+        <p style="margin:0 0 22px;font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:#C7A13A">El objetivo concreto</p>
+        <p style="margin:0 0 30px;font-size:17px;font-weight:400;line-height:1.7;color:#F7F4EC;text-wrap:pretty">Financiar el traslado institucional para firmar convenios con tres instituciones europeas.</p>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <sc-for list="{{ convenios }}" as="c" hint-placeholder-count="3">
+            <div style="display:flex;align-items:baseline;gap:14px;padding:16px 0;border-top:1px solid #6A7EA5">
+              <span style="font-size:9px;color:#C7A13A">◆</span>
+              <div>
+                <p style="margin:0;font-family:Cinzel,serif;font-weight:600;font-size:16px;letter-spacing:0.08em;color:#F7F4EC">{{ c.nombre }}</p>
+                <p style="margin:4px 0 0;font-size:12px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#6A7EA5">{{ c.pais }}</p>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="compromiso" style="max-width:1180px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(24px,5vw,40px)">
+  <p style="margin:0 0 20px;font-size:11px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:#C7A13A">Compromiso universitario</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(32px,5vw,72px);align-items:end;margin-bottom:clamp(40px,6vw,64px)">
+    <h2 style="margin:0;font-family:Cinzel,serif;font-weight:500;font-size:clamp(26px,4vw,40px);line-height:1.2;letter-spacing:0.03em;text-transform:uppercase;color:#0B2E6B">Trabajo hecho<br>dentro de la universidad</h2>
+    <div>
+      <p style="margin:0;font-size:16px;font-weight:300;line-height:1.75;color:#4A4F5A;text-wrap:pretty">Jorge Carbajal impulsa esta iniciativa desde la Facultad de Derecho de la UNAM: paneles académicos, firmas de acuerdos, reconocimientos y trabajo continuo con estudiantes y profesores.</p>
+      <p style="margin:20px 0 0;font-family:Cinzel,serif;font-size:15px;line-height:1.6;letter-spacing:0.06em;color:#0B2E6B">Una persona inicia el puente; el beneficio pertenece a la comunidad.</p>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;border:1px solid #C7A13A">
+    <figure style="margin:0;background:#F7F4EC;outline:1px solid #C7A13A">
+      <img onClick="{{ abrirFoto }}" title="Ampliar" data-pie="Panel académico en la Sala Magna Jacinto Pallares, Facultad de Derecho, UNAM." src="assets/jc-panel.webp" alt="Panel académico en la Sala Magna Jacinto Pallares de la Facultad de Derecho de la UNAM" style="display:block;width:100%;height:clamp(240px,26vw,300px);object-fit:cover;cursor:zoom-in">
+      <figcaption style="padding:18px 22px 22px;font-size:12px;font-weight:400;line-height:1.55;color:#4A4F5A">Panel académico en la Sala Magna Jacinto Pallares, Facultad de Derecho, UNAM.</figcaption>
+    </figure>
+    <figure style="margin:0;background:#F7F4EC;outline:1px solid #C7A13A">
+      <img onClick="{{ abrirFoto }}" title="Ampliar" data-pie="Firma de acuerdo con autoridades universitarias y equipo estudiantil." src="assets/jc-firma-unam.webp" alt="Firma de acuerdo con autoridades universitarias" style="display:block;width:100%;height:clamp(240px,26vw,300px);object-fit:cover;object-position:50% 40%;cursor:zoom-in">
+      <figcaption style="padding:18px 22px 22px;font-size:12px;font-weight:400;line-height:1.55;color:#4A4F5A">Firma de acuerdo con autoridades universitarias y equipo estudiantil.</figcaption>
+    </figure>
+    <figure style="margin:0;background:#F7F4EC;outline:1px solid #C7A13A">
+      <img onClick="{{ abrirFoto }}" title="Ampliar" data-pie="Entrega de reconocimiento académico." src="assets/jc-reconocimiento.webp" alt="Entrega de reconocimiento académico" style="display:block;width:100%;height:clamp(240px,26vw,300px);object-fit:cover;object-position:50% 35%;cursor:zoom-in">
+      <figcaption style="padding:18px 22px 22px;font-size:12px;font-weight:400;line-height:1.55;color:#4A4F5A">Entrega de reconocimiento académico.</figcaption>
+    </figure>
+    <figure style="margin:0;background:#F7F4EC;outline:1px solid #C7A13A">
+      <img onClick="{{ abrirFoto }}" title="Ampliar" data-pie="Entrega de cartas de designación al equipo." src="assets/jc-grupo.webp" alt="Equipo con cartas de designación de la UNAM" style="display:block;width:100%;height:clamp(240px,26vw,300px);object-fit:cover;cursor:zoom-in">
+      <figcaption style="padding:18px 22px 22px;font-size:12px;font-weight:400;line-height:1.55;color:#4A4F5A">Entrega de cartas de designación al equipo.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="paises" style="border-top:1px solid #C7A13A;max-width:1180px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(24px,5vw,40px)">
+  <p style="margin:0 0 20px;font-size:11px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:#C7A13A">Países aliados</p>
+  <h2 style="margin:0 0 56px;font-family:Cinzel,serif;font-weight:500;font-size:clamp(26px,4vw,40px);line-height:1.2;letter-spacing:0.03em;text-transform:uppercase;color:#0B2E6B">México como origen,<br>Europa como puente</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;border:1px solid #C7A13A">
+    <sc-for list="{{ paises }}" as="p" hint-placeholder-count="4">
+      <div style="background:#F7F4EC;outline:1px solid #C7A13A;padding:36px 28px 40px;display:flex;flex-direction:column;gap:16px;min-height:260px" style-hover="background:#EFEADC">
+        <p style="margin:0;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#C7A13A">{{ p.orden }}</p>
+        <h3 style="margin:0;font-family:Cinzel,serif;font-weight:600;font-size:26px;letter-spacing:0.08em;text-transform:uppercase;color:#0B2E6B">{{ p.nombre }}</h3>
+        <p style="margin:0;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#6A7EA5">{{ p.socio }}</p>
+        <p style="margin:auto 0 0;font-size:14px;font-weight:300;line-height:1.7;color:#4A4F5A;text-wrap:pretty">{{ p.rol }}</p>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="cronograma" style="border-top:1px solid #C7A13A">
+  <div style="max-width:1180px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(24px,5vw,40px)">
+    <p style="margin:0 0 20px;font-size:11px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:#C7A13A">Cronograma</p>
+    <h2 style="margin:0 0 64px;font-family:Cinzel,serif;font-weight:500;font-size:clamp(26px,4vw,40px);letter-spacing:0.03em;text-transform:uppercase;color:#0B2E6B">Lo que se construye</h2>
+    <div style="display:flex;flex-direction:column;gap:0;border-left:1px solid #C7A13A;padding-left:0">
+      <sc-for list="{{ hitos }}" as="h" hint-placeholder-count="3">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(16px,4vw,56px);padding:40px 0 40px clamp(28px,4vw,44px);border-bottom:1px solid #E2DCCB;position:relative">
+          <span style="position:absolute;left:-5px;top:52px;width:9px;height:9px;background:#C7A13A;transform:rotate(45deg)"></span>
+          <h3 style="margin:0;font-family:Cinzel,serif;font-weight:600;font-size:clamp(22px,3vw,28px);letter-spacing:0.06em;text-transform:uppercase;color:#0B2E6B">{{ h.etapa }}</h3>
+          <div>
+            <p style="margin:0 0 10px;font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#6A7EA5">{{ h.titulo }}</p>
+            <p style="margin:0;max-width:640px;font-size:16px;font-weight:300;line-height:1.75;color:#4A4F5A;text-wrap:pretty">{{ h.texto }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="apoya" style="border-top:1px solid #C7A13A;background:#EFEADC">
+  <div style="max-width:1180px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(24px,5vw,40px)">
+    <p style="margin:0 0 20px;font-size:11px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:#C7A13A">Apoya la campaña</p>
+    <h2 style="margin:0 0 20px;font-family:Cinzel,serif;font-weight:500;font-size:clamp(26px,4vw,40px);letter-spacing:0.03em;text-transform:uppercase;color:#0B2E6B">Cuatro niveles de apoyo</h2>
+    <p style="margin:0 0 56px;max-width:620px;font-size:16px;font-weight:300;line-height:1.75;color:#4A4F5A;text-wrap:pretty">Elige un nivel, ajusta el monto desde su mínimo y completa el pago. Puedes aportar más del mínimo; los beneficios corresponden al nivel elegido. Todos los montos están en pesos mexicanos.</p>
+
+    <div style="overflow-x:auto;border:1px solid #0B2E6B;background:#F7F4EC">
+      <table style="width:100%;min-width:900px;border-collapse:collapse;font-size:14px">
+        <thead>
+          <tr>
+            <th style="width:30%;text-align:left;vertical-align:bottom;padding:28px 28px 24px;border-bottom:2px solid #0B2E6B;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#6A7EA5">Beneficios</th>
+            <sc-for list="{{ niveles }}" as="n" hint-placeholder-count="4">
+              <th style="text-align:left;vertical-align:bottom;padding:28px 24px 24px;border-bottom:2px solid #0B2E6B;border-left:1px solid #E2DCCB">
+                <sc-if value="{{ n.destacado }}" hint-placeholder-val="{{ false }}">
+                  <p style="margin:0 0 10px;font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#C7A13A">Recomendado</p>
+                </sc-if>
+                <p style="margin:0 0 8px;font-family:Cinzel,serif;font-weight:600;font-size:17px;line-height:1.25;letter-spacing:0.06em;text-transform:uppercase;color:#0B2E6B">{{ n.nombre }}</p>
+                <p style="margin:0;font-size:13px;font-weight:500;color:#4A4F5A">{{ n.rango }}</p>
+              </th>
+            </sc-for>
+          </tr>
+        </thead>
+        <tbody>
+          <sc-for list="{{ filas }}" as="fila" hint-placeholder-count="5">
+            <tr>
+              <td style="padding:20px 28px;border-bottom:1px solid #E2DCCB;font-size:14px;font-weight:400;line-height:1.55;color:#4A4F5A">{{ fila.texto }}</td>
+              <sc-for list="{{ fila.celdas }}" as="celda" hint-placeholder-count="4">
+                <td style="padding:20px 24px;border-bottom:1px solid #E2DCCB;border-left:1px solid #E2DCCB">
+                  <sc-if value="{{ celda.si }}" hint-placeholder-val="{{ true }}">
+                    <span style="font-size:11px;color:#C7A13A">◆</span>
+                  </sc-if>
+                  <sc-if value="{{ celda.no }}" hint-placeholder-val="{{ false }}">
+                    <span style="font-size:13px;color:#C4BDAA">—</span>
+                  </sc-if>
+                </td>
+              </sc-for>
+            </tr>
+          </sc-for>
+          <tr>
+            <td style="padding:28px;vertical-align:top;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#6A7EA5">Monto</td>
+            <sc-for list="{{ niveles }}" as="n" hint-placeholder-count="4">
+              <td style="padding:28px 24px;border-left:1px solid #E2DCCB;vertical-align:top">
+                <div style="display:flex;align-items:center;gap:8px;border:1px solid #6A7EA5;padding:11px 12px;background:#F7F4EC;margin-bottom:14px" style-focus="border-color:#C7A13A">
+                  <span style="font-size:14px;font-weight:500;color:#6A7EA5">$</span>
+                  <input type="number" value="{{ n.monto }}" onChange="{{ n.onMonto }}" min="{{ n.min }}" aria-label="Monto en pesos" style="width:100%;border:0;background:transparent;font-family:Montserrat,sans-serif;font-size:15px;font-weight:600;color:#0B2E6B;outline:none">
+                </div>
+                <button type="button" onClick="{{ n.onApoyar }}" style="width:100%;text-align:left;border:0;cursor:pointer;font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#F7F4EC;background:#0B2E6B;padding:15px 16px" style-hover="background:#C7A13A;color:#0B2E6B">Apoyar</button>
+              </td>
+            </sc-for>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin:20px 0 0;font-size:12px;font-weight:400;letter-spacing:0.04em;color:#6A7EA5">{{ aviso }}</p>
+  </div>
+</section>
+
+<section id="contacto" style="border-top:1px solid #C7A13A;background:#0B2E6B;color:#F7F4EC">
+  <div style="max-width:1180px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(24px,5vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(40px,6vw,72px);align-items:start">
+    <div>
+      <p style="margin:0 0 20px;font-size:11px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:#C7A13A">Contacto</p>
+      <h2 style="margin:0;font-family:Cinzel,serif;font-weight:500;font-size:clamp(26px,4vw,38px);line-height:1.2;letter-spacing:0.03em;color:#F7F4EC;text-wrap:balance">Instituciones, despachos y empresas</h2>
+    </div>
+    <div>
+      <p style="margin:0 0 36px;font-size:17px;font-weight:300;line-height:1.8;color:#D8DDE8;text-wrap:pretty">Si tu institución, despacho o empresa quiere sumarse como Fundador Institucional, escríbenos. Respondemos con la carpeta del proyecto y las condiciones del reconocimiento.</p>
+      <a href="mailto:contacto@derechosinfronteras.org" style="display:inline-block;font-family:Cinzel,serif;font-size:clamp(17px,2.6vw,22px);letter-spacing:0.06em;color:#C7A13A;word-break:break-word;border-bottom:1px solid #C7A13A;padding-bottom:6px">contacto@derechosinfronteras.org</a>
+    </div>
+  </div>
+</section>
+
+<footer style="border-top:1px solid #C7A13A;background:#0B2E6B">
+  <div style="max-width:1180px;margin:0 auto;padding:clamp(28px,5vw,40px);display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between">
+    <p style="margin:0;font-family:Cinzel,serif;font-weight:600;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:#F7F4EC">Derecho Sin Fronteras</p>
+    <p style="margin:0;font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#6A7EA5">México · España · Francia · Portugal</p>
+  </div>
+</footer>
+
+<sc-if value="{{ lightboxAbierto }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ cerrarFoto }}" style="position:fixed;inset:0;z-index:100;background:rgba(11,46,107,0.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:clamp(20px,5vw,56px);cursor:zoom-out">
+    {{ lightboxImg }}
+    <p style="margin:0;max-width:720px;font-size:13px;font-weight:400;line-height:1.6;letter-spacing:0.02em;color:#D8DDE8">{{ lightboxPie }}</p>
+    <button type="button" onClick="{{ cerrarFoto }}" aria-label="Cerrar" style="position:absolute;top:clamp(16px,3vw,32px);right:clamp(16px,3vw,32px);border:1px solid #C7A13A;background:transparent;cursor:pointer;font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#F7F4EC;padding:12px 18px" style-hover="background:#C7A13A;color:#0B2E6B">Cerrar</button>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;nivelDestacado&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;base&quot;,&quot;medio&quot;,&quot;alto&quot;,&quot;institucional&quot;],&quot;default&quot;:&quot;medio&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaña&quot;},&quot;mostrarFotografia&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Contenido&quot;}}">
+class Component extends DCLogic {
+  state = {
+    lightbox: null,
+    montos: { base: 200, medio: 600, alto: 1500, institucional: 5000 },
+    aviso: "El pago se procesa con Stripe Checkout. Tarjeta de prueba: 4242 4242 4242 4242."
+  };
+
+  static NIVELES = [
+    { id: "base", nombre: "Apoyo Base", rango: "Desde $200 MXN", min: 200 },
+    { id: "medio", nombre: "Apoyo Medio", rango: "Desde $600 MXN", min: 600 },
+    { id: "alto", nombre: "Apoyo Alto", rango: "Desde $1,500 MXN", min: 1500 },
+    { id: "institucional", nombre: "Fundador Institucional", rango: "Desde $5,000 MXN", min: 5000 }
+  ];
+
+  static FILAS = [
+    { texto: "Actualizaciones del proceso", desde: 0 },
+    { texto: "Reconocimiento como fundador/a del programa", desde: 0 },
+    { texto: "Acceso prioritario al grupo y base de investigadores", desde: 1 },
+    { texto: "Mentoría individual para proyecto y carta de motivos", desde: 2 },
+    { texto: "Reconocimiento como patrocinador institucional", desde: 3 }
+  ];
+
+  componentDidMount() {
+    this._onKey = e => { if (e.key === "Escape" && this.state.lightbox) this.setState({ lightbox: null }); };
+    document.addEventListener("keydown", this._onKey);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this._onKey);
+  }
+
+  abrirFoto(e) {
+    const img = e.currentTarget.querySelector("img") || e.currentTarget;
+    if (!img || !img.src) return;
+    this.setState({ lightbox: { src: img.src, alt: img.alt || "", pie: img.getAttribute("data-pie") || img.alt || "" } });
+  }
+
+  setMonto(id, valor) {
+    this.setState(s => ({ montos: Object.assign({}, s.montos, { [id]: valor }) }));
+  }
+
+  apoyar(n) {
+    const monto = Number(this.state.montos[n.id]) || 0;
+    if (monto < n.min) {
+      this.setState({ aviso: "Ajusta el monto: " + n.nombre + " parte de $" + n.min.toLocaleString("es-MX") + " MXN." });
+      return;
+    }
+    this.setState({ aviso: "Enviando a Stripe Checkout — " + n.nombre + ", $" + monto.toLocaleString("es-MX") + " MXN." });
+  }
+
+  renderVals() {
+    const destacado = this.props.nivelDestacado ?? "medio";
+    const niveles = Component.NIVELES.map(n => ({
+      id: n.id,
+      nombre: n.nombre,
+      rango: n.rango,
+      min: n.min,
+      destacado: n.id === destacado,
+      monto: this.state.montos[n.id],
+      onMonto: e => this.setMonto(n.id, e.target.value),
+      onApoyar: () => this.apoyar(n)
+    }));
+
+    const filas = Component.FILAS.map(f => ({
+      texto: f.texto,
+      celdas: Component.NIVELES.map((n, i) => ({ si: i >= f.desde, no: i < f.desde }))
+    }));
+
+    const lb = this.state.lightbox;
+    return {
+      lightboxAbierto: !!lb,
+      lightboxPie: lb ? lb.pie : "",
+      lightboxImg: lb ? React.createElement("img", {
+        src: lb.src,
+        alt: lb.alt,
+        style: { maxWidth: "min(1100px, 92vw)", maxHeight: "76vh", objectFit: "contain", border: "1px solid #C7A13A" }
+      }) : null,
+      abrirFoto: e => this.abrirFoto(e),
+      cerrarFoto: () => this.setState({ lightbox: null }),
+      mostrarFotografia: this.props.mostrarFotografia ?? true,
+      aviso: this.state.aviso,
+      niveles,
+      filas,
+      atributos: [
+        { nombre: "Institucional", texto: "Seria, confiable, vinculada al mundo universitario y jurídico." },
+        { nombre: "Internacional", texto: "Cooperación, intercambio, presencia multipaís." },
+        { nombre: "Rigurosa", texto: "Investigación, Derecho, academia, formación profesional." },
+        { nombre: "Humana", texto: "Estudiantes, investigadores y profesores construyendo redes." }
+      ],
+      convenios: [
+        { nombre: "CONEDE", pais: "España" },
+        { nombre: "Fédération ARES", pais: "Francia" },
+        { nombre: "CNED", pais: "Portugal" }
+      ],
+      paises: [
+        { orden: "01", nombre: "México", socio: "Origen", rol: "Origen de la iniciativa." },
+        { orden: "02", nombre: "España", socio: "CONEDE", rol: "Intercambio académico y convenios." },
+        { orden: "03", nombre: "Francia", socio: "Fédération ARES", rol: "Formación internacional y redes profesionales." },
+        { orden: "04", nombre: "Portugal", socio: "CNED", rol: "Colaboración jurídica y académica." }
+      ],
+      hitos: [
+        { etapa: "2026", titulo: "Construcción y firma de acuerdos", texto: "Traslado institucional a Europa y firma de convenios con CONEDE, Fédération ARES y CNED." },
+        { etapa: "Siguientes etapas", titulo: "Base de investigadores", texto: "Integración de una base de investigadores y estudiantes con acceso a las redes construidas." },
+        { etapa: "Después", titulo: "Expansión y acceso", texto: "Expansión de la red y acceso para futuras generaciones de estudiantes de Derecho." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
