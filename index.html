@@ -80,11 +80,6 @@
     #inicio h1 { font-size: clamp(36px, 6vw, 50px) !important; }
   }
 
-  /* Los spinners del campo de monto desbordan su celda y no aportan. */
-  #apoya input[type="number"] { -moz-appearance: textfield; appearance: textfield; }
-  #apoya input[type="number"]::-webkit-outer-spin-button,
-  #apoya input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-
   /* --- Tabla comparativa de niveles: legible en pantallas angostas --- */
   .tabla-pista { display: none; }
   @media (max-width: 719px) {
@@ -266,7 +261,7 @@
   <div style="max-width:1180px;margin:0 auto;padding:clamp(64px,9vw,104px) clamp(24px,5vw,40px)">
     <p style="margin:0 0 20px;font-size:11px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:#C7A13A">Apoya la campaña</p>
     <h2 style="margin:0 0 20px;font-family:Cinzel,serif;font-weight:500;font-size:clamp(26px,4vw,40px);letter-spacing:0.03em;text-transform:uppercase;color:#0B2E6B">Cuatro niveles de apoyo</h2>
-    <p style="margin:0 0 56px;max-width:620px;font-size:16px;font-weight:300;line-height:1.75;color:#4A4F5A;text-wrap:pretty">Elige un nivel, ajusta el monto desde su mínimo y completa el pago. Puedes aportar más del mínimo; los beneficios corresponden al nivel elegido. Todos los montos están en pesos mexicanos.</p>
+    <p style="margin:0 0 56px;max-width:620px;font-size:16px;font-weight:300;line-height:1.75;color:#4A4F5A;text-wrap:pretty">Elige un nivel y define tu monto en el paso de pago. Puedes aportar más del mínimo; los beneficios corresponden al nivel elegido. Todos los montos están en pesos mexicanos.</p>
 
     <p class="tabla-pista" style="margin:0 0 14px;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#6A7EA5">Desliza la tabla para comparar niveles →</p>
     <div style="overflow-x:auto;border:1px solid #0B2E6B;background:#F7F4EC">
@@ -302,14 +297,16 @@
             </tr>
           </sc-for>
           <tr>
-            <td style="padding:28px;vertical-align:top;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#6A7EA5">Monto</td>
+            <td style="padding:28px;vertical-align:top;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#6A7EA5">Aportación</td>
             <sc-for list="{{ niveles }}" as="n" hint-placeholder-count="4">
               <td style="padding:28px 24px;border-left:1px solid #E2DCCB;vertical-align:top">
-                <div style="display:flex;align-items:center;gap:8px;border:1px solid #6A7EA5;padding:11px 12px;background:#F7F4EC;margin-bottom:14px" style-focus="border-color:#C7A13A">
-                  <span style="font-size:14px;font-weight:500;color:#6A7EA5">$</span>
-                  <input type="number" value="{{ n.monto }}" onChange="{{ n.onMonto }}" min="{{ n.min }}" aria-label="Monto en pesos" style="width:100%;border:0;background:transparent;font-family:Montserrat,sans-serif;font-size:15px;font-weight:600;color:#0B2E6B;outline:none">
-                </div>
-                <button type="button" onClick="{{ n.onApoyar }}" style="width:100%;text-align:left;border:0;cursor:pointer;font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#F7F4EC;background:#0B2E6B;padding:15px 16px" style-hover="background:#C7A13A;color:#0B2E6B">Apoyar</button>
+                <p style="margin:0 0 14px;font-size:13px;font-weight:400;line-height:1.5;color:#4A4F5A">Desde <strong style="font-weight:600;color:#0B2E6B">${{ n.minTexto }} MXN</strong>. Defines el monto en el siguiente paso.</p>
+                <sc-if value="{{ n.activo }}" hint-placeholder-val="{{ true }}">
+                  <a href="{{ n.url }}" style="display:block;text-align:left;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#F7F4EC;background:#0B2E6B;padding:15px 16px" style-hover="background:#C7A13A;color:#0B2E6B">Apoyar</a>
+                </sc-if>
+                <sc-if value="{{ n.inactivo }}" hint-placeholder-val="{{ false }}">
+                  <span style="display:block;text-align:left;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#6A7EA5;border:1px dashed #C4BDAA;padding:15px 16px;cursor:not-allowed">Próximamente</span>
+                </sc-if>
               </td>
             </sc-for>
           </tr>
@@ -353,10 +350,21 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;nivelDestacado&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;base&quot;,&quot;medio&quot;,&quot;alto&quot;,&quot;institucional&quot;],&quot;default&quot;:&quot;medio&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Campaña&quot;},&quot;mostrarFotografia&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Contenido&quot;}}">
 class Component extends DCLogic {
   state = {
-    lightbox: null,
-    montos: { base: 200, medio: 600, alto: 1500, institucional: 5000 },
-    aviso: "El pago se procesa con Stripe Checkout. Tarjeta de prueba: 4242 4242 4242 4242."
+    lightbox: null
   };
+
+  // ─── ÚNICO LUGAR QUE HAY QUE EDITAR PARA ACTIVAR LOS PAGOS ───────────────
+  // Pega aquí el Payment Link de cada nivel, creado en el panel de Stripe con
+  // la modalidad "Los clientes eligen cuánto pagar" y su monto mínimo.
+  // Mientras un enlace esté vacío, ese nivel se muestra como "Próximamente".
+  // Formato: "https://buy.stripe.com/xxxxxxxxxxxx"
+  static PAGOS = {
+    base: "",
+    medio: "",
+    alto: "",
+    institucional: ""
+  };
+  // ─────────────────────────────────────────────────────────────────────────
 
   static NIVELES = [
     { id: "base", nombre: "Apoyo Base", rango: "Desde $200 MXN", min: 200 },
@@ -388,31 +396,25 @@ class Component extends DCLogic {
     this.setState({ lightbox: { src: img.src, alt: img.alt || "", pie: img.getAttribute("data-pie") || img.alt || "" } });
   }
 
-  setMonto(id, valor) {
-    this.setState(s => ({ montos: Object.assign({}, s.montos, { [id]: valor }) }));
-  }
-
-  apoyar(n) {
-    const monto = Number(this.state.montos[n.id]) || 0;
-    if (monto < n.min) {
-      this.setState({ aviso: "Ajusta el monto: " + n.nombre + " parte de $" + n.min.toLocaleString("es-MX") + " MXN." });
-      return;
-    }
-    this.setState({ aviso: "Enviando a Stripe Checkout — " + n.nombre + ", $" + monto.toLocaleString("es-MX") + " MXN." });
-  }
 
   renderVals() {
     const destacado = this.props.nivelDestacado ?? "medio";
-    const niveles = Component.NIVELES.map(n => ({
-      id: n.id,
-      nombre: n.nombre,
-      rango: n.rango,
-      min: n.min,
-      destacado: n.id === destacado,
-      monto: this.state.montos[n.id],
-      onMonto: e => this.setMonto(n.id, e.target.value),
-      onApoyar: () => this.apoyar(n)
-    }));
+    const niveles = Component.NIVELES.map(n => {
+      const url = (Component.PAGOS[n.id] || "").trim();
+      return {
+        id: n.id,
+        nombre: n.nombre,
+        rango: n.rango,
+        min: n.min,
+        minTexto: n.min.toLocaleString("es-MX"),
+        destacado: n.id === destacado,
+        url,
+        activo: !!url,
+        inactivo: !url
+      };
+    });
+
+    const algunoActivo = niveles.some(n => n.activo);
 
     const filas = Component.FILAS.map(f => ({
       texto: f.texto,
@@ -431,7 +433,9 @@ class Component extends DCLogic {
       abrirFoto: e => this.abrirFoto(e),
       cerrarFoto: () => this.setState({ lightbox: null }),
       mostrarFotografia: this.props.mostrarFotografia ?? true,
-      aviso: this.state.aviso,
+      aviso: algunoActivo
+        ? "El pago se procesa de forma segura en Stripe. Defines el monto ahí y recibes tu comprobante por correo."
+        : "Los pagos se activan en cuanto quede lista la cuenta de Stripe de la iniciativa. Mientras tanto, escríbenos para aportar.",
       niveles,
       filas,
       atributos: [
