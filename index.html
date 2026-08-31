@@ -33,20 +33,101 @@
   :focus-visible { outline: 2px solid #C7A13A; outline-offset: 3px; }
   ::selection { background: #C7A13A; color: #F7F4EC; }
   input::placeholder { color: #6A7EA5; }
-  section[id] { scroll-margin-top: 200px; }
+  section[id] { scroll-margin-top: 88px; }
   @media (min-width: 720px) { section[id] { scroll-margin-top: 92px; } }
+  img { max-width: 100%; }
+
+  /* --- Navegación: menú desplegable en móvil, barra completa en desktop --- */
+  .nav-movil { display: none; }
+  .nav-movil > summary {
+    list-style: none; cursor: pointer; display: flex; align-items: center; gap: 10px;
+    padding: 12px 16px; border: 1px solid #C7A13A; color: #0B2E6B;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .nav-movil > summary::-webkit-details-marker { display: none; }
+  .nav-movil > summary .barras { display: block; width: 18px; height: 9px;
+    border-top: 1px solid #0B2E6B; border-bottom: 1px solid #0B2E6B; }
+  .nav-movil[open] > summary { background: #0B2E6B; color: #F7F4EC; border-color: #0B2E6B; }
+  .nav-movil[open] > summary .barras { border-color: #F7F4EC; }
+  /* Sólo desplegado: dar display al contenido de un <details> cerrado anula su ocultamiento nativo. */
+  .nav-movil > nav { display: none; }
+  .nav-movil[open] > nav {
+    position: absolute; left: 0; right: 0; top: 100%;
+    display: flex; flex-direction: column;
+    background: #F7F4EC; border-top: 1px solid #C7A13A; border-bottom: 1px solid #C7A13A;
+  }
+  .nav-movil > nav a {
+    padding: 18px clamp(20px, 4vw, 40px); border-bottom: 1px solid #E2DCCB;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #4A4F5A;
+  }
+  .nav-movil > nav a:last-child {
+    border-bottom: 0; background: #0B2E6B; color: #F7F4EC; font-weight: 700;
+  }
+  /* !important: el nav trae su display en el atributo style. */
+  @media (max-width: 719px) {
+    .nav-movil { display: block; }
+    .nav-desktop { display: none !important; }
+  }
+  /* A 360px el logo y el botón no caben en una fila sin encoger el lockup. */
+  @media (max-width: 400px) {
+    header .lockup { font-size: 13px !important; letter-spacing: 0.1em !important; }
+    header .lockup-img { width: 38px !important; height: 38px !important; }
+    .nav-movil > summary { padding: 11px 13px; }
+  }
+
+  /* El título se pasa de su columna en el rango de dos columnas angostas. */
+  @media (max-width: 900px) {
+    #inicio h1 { font-size: clamp(36px, 6vw, 50px) !important; }
+  }
+
+  /* Los spinners del campo de monto desbordan su celda y no aportan. */
+  #apoya input[type="number"] { -moz-appearance: textfield; appearance: textfield; }
+  #apoya input[type="number"]::-webkit-outer-spin-button,
+  #apoya input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+  /* --- Tabla comparativa de niveles: legible en pantallas angostas --- */
+  .tabla-pista { display: none; }
+  @media (max-width: 719px) {
+    .tabla-pista { display: block; }
+    #apoya table { min-width: 640px !important; }
+    #apoya th, #apoya td { padding: 16px 14px !important; }
+    #apoya thead th:first-child,
+    #apoya tbody td:first-child {
+      position: sticky; left: 0; z-index: 2;
+      width: 44% !important; background: #F7F4EC;
+      box-shadow: 1px 0 0 #E2DCCB; font-size: 13px !important;
+    }
+  }
 </style>
+<script>
+  // Cierra el menú móvil al elegir un destino.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('#nav-movil nav a')
+    if (a) document.getElementById('nav-movil').removeAttribute('open')
+  })
+</script>
 </helmet>
 
-<div style="max-width:100%;overflow-x:hidden">
+<!-- overflow-x:clip y no hidden: hidden crea un contenedor de scroll que anula el position:sticky del header. -->
+<div style="max-width:100%;overflow-x:clip">
 
 <header style="position:sticky;top:0;z-index:50;background:rgba(247,244,236,0.94);backdrop-filter:blur(8px);border-bottom:1px solid #C7A13A">
   <div style="max-width:1180px;margin:0 auto;padding:14px clamp(20px,4vw,40px);min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:clamp(14px,3vw,32px);flex-wrap:wrap;row-gap:14px">
     <a href="#inicio" style="display:flex;align-items:center;gap:14px;flex-shrink:0">
-      <img src="assets/dsf-logo.webp" alt="Derecho Sin Fronteras" style="width:44px;height:44px;object-fit:cover;object-position:50% 22%;mix-blend-mode:multiply">
-      <span style="font-family:Cinzel,serif;font-weight:600;font-size:15px;letter-spacing:0.16em;line-height:1.25;text-transform:uppercase;color:#0B2E6B">Derecho<br>Sin Fronteras</span>
+      <img class="lockup-img" src="assets/dsf-logo.webp" alt="Derecho Sin Fronteras" style="width:44px;height:44px;object-fit:cover;object-position:50% 22%;mix-blend-mode:multiply">
+      <span class="lockup" style="font-family:Cinzel,serif;font-weight:600;font-size:15px;letter-spacing:0.16em;line-height:1.25;text-transform:uppercase;color:#0B2E6B">Derecho<br>Sin Fronteras</span>
     </a>
-    <nav style="display:flex;align-items:center;gap:clamp(16px,2.4vw,34px);flex-wrap:wrap;justify-content:flex-end">
+    <details class="nav-movil" id="nav-movil">
+      <summary aria-label="Abrir menú de navegación"><span class="barras"></span>Menú</summary>
+      <nav>
+        <a href="#sobre">Sobre la iniciativa</a>
+        <a href="#compromiso">Compromiso</a>
+        <a href="#paises">Países aliados</a>
+        <a href="#cronograma">Cronograma</a>
+        <a href="#apoya">Apoya</a>
+      </nav>
+    </details>
+    <nav class="nav-desktop" style="display:flex;align-items:center;gap:clamp(16px,2.4vw,34px);flex-wrap:wrap;justify-content:flex-end">
       <a href="#sobre" style="font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#4A4F5A">Sobre la iniciativa</a>
       <a href="#compromiso" style="font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#4A4F5A">Compromiso</a>
       <a href="#paises" style="font-size:12px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#4A4F5A">Países aliados</a>
@@ -187,6 +268,7 @@
     <h2 style="margin:0 0 20px;font-family:Cinzel,serif;font-weight:500;font-size:clamp(26px,4vw,40px);letter-spacing:0.03em;text-transform:uppercase;color:#0B2E6B">Cuatro niveles de apoyo</h2>
     <p style="margin:0 0 56px;max-width:620px;font-size:16px;font-weight:300;line-height:1.75;color:#4A4F5A;text-wrap:pretty">Elige un nivel, ajusta el monto desde su mínimo y completa el pago. Puedes aportar más del mínimo; los beneficios corresponden al nivel elegido. Todos los montos están en pesos mexicanos.</p>
 
+    <p class="tabla-pista" style="margin:0 0 14px;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#6A7EA5">Desliza la tabla para comparar niveles →</p>
     <div style="overflow-x:auto;border:1px solid #0B2E6B;background:#F7F4EC">
       <table style="width:100%;min-width:900px;border-collapse:collapse;font-size:14px">
         <thead>
