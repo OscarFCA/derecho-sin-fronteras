@@ -360,7 +360,7 @@
 class Component extends DCLogic {
   state = {
     lightbox: null,
-    montos: { base: 200, medio: 600, alto: 1500, institucional: 5000 },
+    montos: { base: 50, medio: 500, alto: 1500, institucional: 5000 },
     pagosActivos: false,   // lo confirma el backend; hasta entonces, "Próximamente"
     enviando: null,
     aviso: ""
@@ -371,8 +371,8 @@ class Component extends DCLogic {
   static API = "https://dsf-pagos-production.up.railway.app";
 
   static NIVELES = [
-    { id: "base", nombre: "Apoyo Base", rango: "Desde $200 MXN", min: 200 },
-    { id: "medio", nombre: "Apoyo Medio", rango: "Desde $600 MXN", min: 600 },
+    { id: "base", nombre: "Apoyo Base", rango: "Desde $50 MXN", min: 50 },
+    { id: "medio", nombre: "Apoyo Medio", rango: "Desde $500 MXN", min: 500 },
     { id: "alto", nombre: "Apoyo Alto", rango: "Desde $1,500 MXN", min: 1500 },
     { id: "institucional", nombre: "Fundador Institucional", rango: "Desde $5,000 MXN", min: 5000 }
   ];
