@@ -108,6 +108,9 @@
   @media (max-width: 899px) {
     #galeria, .galeria { grid-template-columns: repeat(2, 1fr) !important; }
     #galeria > figure, .galeria > figure { grid-column: auto !important; }
+    /* Impar: la ultima ocupa la fila entera en vez de dejar una celda vacia. */
+    #galeria > figure:nth-child(5),
+    .galeria > figure:nth-child(5) { grid-column: 1 / -1 !important; }
   }
   @media (max-width: 559px) {
     #galeria, .galeria { grid-template-columns: 1fr !important; }
