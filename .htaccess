@@ -1,0 +1,17 @@
+# Derecho Sin Fronteras — política de caché.
+#
+# Sin Cache-Control el navegador inventa su propio plazo (suele ser el 10% del
+# tiempo desde la última modificación), así que una página que llevaba semanas
+# sin cambiar se queda guardada varios días y los cambios no se ven.
+# El HTML se revalida siempre; los assets, que cambian poco, sí se cachean.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+  <FilesMatch "\.(webp|png|jpg|jpeg|svg|ico|woff|woff2)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
