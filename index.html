@@ -99,17 +99,18 @@
     }
   }
 
-  /* --- Galeria de Compromiso: 5 fotos en 3 + 2, sin celdas vacias --- */
-  .galeria { grid-template-columns: repeat(6, 1fr); }
-  .galeria > figure:nth-child(-n+3) { grid-column: span 2; }
-  .galeria > figure:nth-child(n+4)  { grid-column: span 3; }
+  /* --- Galeria de Compromiso: 5 fotos en 3 + 2, sin celdas vacias.
+         Va por id y no por clase: el runtime del .dc.html borra los class. --- */
+  #galeria { grid-template-columns: repeat(6, 1fr) !important; }
+  #galeria > figure:nth-child(-n+3) { grid-column: span 2; }
+  #galeria > figure:nth-child(n+4)  { grid-column: span 3; }
   @media (max-width: 899px) {
-    .galeria { grid-template-columns: repeat(2, 1fr); }
-    .galeria > figure:nth-child(-n+3),
-    .galeria > figure:nth-child(n+4) { grid-column: auto; }
+    #galeria { grid-template-columns: repeat(2, 1fr) !important; }
+    #galeria > figure:nth-child(-n+3),
+    #galeria > figure:nth-child(n+4) { grid-column: auto; }
   }
   @media (max-width: 559px) {
-    .galeria { grid-template-columns: 1fr; }
+    #galeria { grid-template-columns: 1fr !important; }
   }
 </style>
 <script>
@@ -223,7 +224,7 @@
       <p style="margin:20px 0 0;font-family:Cinzel,serif;font-size:15px;line-height:1.6;letter-spacing:0.06em;color:#0B2E6B">Una persona inicia el puente; el beneficio pertenece a la comunidad.</p>
     </div>
   </div>
-  <div class="galeria" style="display:grid;gap:1px;border:1px solid #C7A13A">
+  <div id="galeria" style="display:grid;gap:1px;border:1px solid #C7A13A">
     <figure style="margin:0;background:#F7F4EC;outline:1px solid #C7A13A">
       <img onClick="{{ abrirFoto }}" title="Ampliar" data-pie="Panel académico con Elena Poniatowska en el Aula Magna Jacinto Pallares, Facultad de Derecho, UNAM." src="assets/jc-panel.webp" alt="Panel académico con Elena Poniatowska en el Aula Magna Jacinto Pallares de la Facultad de Derecho de la UNAM" style="display:block;width:100%;height:clamp(240px,26vw,300px);object-fit:cover;cursor:zoom-in">
       <figcaption style="padding:18px 22px 22px;font-size:12px;font-weight:400;line-height:1.55;color:#4A4F5A">Panel académico con Elena Poniatowska en el Aula Magna Jacinto Pallares, Facultad de Derecho, UNAM.</figcaption>
